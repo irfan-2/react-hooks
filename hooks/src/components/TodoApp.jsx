@@ -2,7 +2,7 @@ import react from "react"
 import { useState } from "react"
 
 const TodoApp = () =>{
-    const [todos, setTodos] = useState("")
+    const [todos, setTodos] = useState([])
     const [text, setText] = useState("")
 
     function handleAdd(e){
@@ -29,9 +29,12 @@ const TodoApp = () =>{
                 <button>Add</button>
             </form>
             <ul>
-                {todoss.map((t) =>( 
-                    <li key={t.id}> <p>{t.text}</p>
+                {todos.map((t) =>( 
+                    <li key={t.id}> 
+                    <p>{t.text}</p>
+                    <span>{t.done ? <p>Task complete</p>: <p>Task incomlete</p>}</span>
                     <button onClick={() => toggleTodo(t.id)}>Done</button>
+                    <button onClick={() => deleteTodo(t.id)}>delete</button>
                     </li>
                 ))}
             </ul>
