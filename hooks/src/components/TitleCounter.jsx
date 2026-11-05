@@ -12,6 +12,7 @@ const TitleCounter = () =>{
     return (
         <div>
             <button onClick={() => setCount((c) => c+1)} >Couter is at: {count}</button>
+            <br />
             <button onClick={() => setBtn((c) => c+1)}>Btn value : {btn}</button>
         </div>
     )
