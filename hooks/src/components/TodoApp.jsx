@@ -25,7 +25,7 @@ const TodoApp = () =>{
         <div>
             <form onSubmit={handleAdd}>
                 <label htmlFor="todo">Todo: </label>
-                <input onChange={(e) => setText(e.target.value)} type="text" id="todo" placeholder="Enter your task" />
+                <input value={text} onChange={(e) => setText(e.target.value)} type="text" id="todo" placeholder="Enter your task" />
                 <button>Add</button>
             </form>
             <ul>
