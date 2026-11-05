@@ -3,12 +3,16 @@ import { useEffect } from "react";
 
 const TitleCounter = () =>{
     const [count,setCount] = useState(0)
+    const [btn, setBtn] = useState(100)
     useEffect(() => {
         document.title = `clicked ${count} times`
+        console.log("ran");
+        
     }, [count])
     return (
         <div>
             <button onClick={() => setCount((c) => c+1)} >Couter is at: {count}</button>
+            <button onClick={() => setBtn((c) => c+1)}>Btn value : {btn}</button>
         </div>
     )
 }
